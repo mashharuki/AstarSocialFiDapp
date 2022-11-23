@@ -35,6 +35,9 @@ mod backend {
         pub message_list_map_counter: u128,
     }
 
+    /**
+     * functions
+     */
     impl Backend {
 
         /**
