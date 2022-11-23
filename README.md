@@ -1,0 +1,2 @@
+# AstarSocialFiDapp
+AstarNetworkと連動するSocialFi Dapp開発用のリポジトリです。
