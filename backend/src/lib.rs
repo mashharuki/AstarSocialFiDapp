@@ -1,52 +1,77 @@
 #![cfg_attr(not(feature = "std"), no_std)]
 
+mod follow;
+mod message;
+mod metadata;
+mod post;
+mod profile;
+
 use ink_lang as ink;
+
 
 #[ink::contract]
 mod backend {
 
-    /// Defines the storage of your contract.
-    /// Add new fields to the below struct in order
-    /// to add new static storage fields to your contract.
+    use ink_env::debug_println;
+    use ink_lang::codegen::Env;
+    use ink_prelude::vec::Vec;
+    use openbrush::storage::Mapping;
+    use openbrush::test_utils::accounts;
+
+    pub use crate::follow::*;
+    pub use crate::message::*;
+    pub use crate::metadata::*;
+    pub use crate::post::*;
+
+    /**
+     * Contract Struct
+     */
     #[ink(storage)]
     pub struct Backend {
-        /// Stores a single `bool` value on the storage.
-        value: bool,
+        pub profile_map: Mapping<AccountId, Profile>,
+        pub post_map: Mapping<u128, Post>,
+        pub post_map_counter: u128,
+        pub message_list_map: Mapping<u128, Vec<Message>>,
+        pub message_list_map_counter: u128,
     }
 
     impl Backend {
-        /// Constructor that initializes the `bool` value to the given `init_value`.
+
+        /**
+         * constructor 
+         */
         #[ink(constructor)]
-        pub fn new(init_value: bool) -> Self {
-            Self { value: init_value }
+        pub fn new() -> Self {
+            Self {
+                profile_map: Mapping::default(),
+                post_map: Mapping::default(),
+                post_map_counter: 0,
+                message_list_map: Mapping::default(),
+                message_list_map_counter: 0,
+            }
         }
 
-        /// Constructor that initializes the `bool` value to `false`.
-        ///
-        /// Constructors can delegate to other constructors.
+        /**
+         * new function
+         */
         #[ink(constructor)]
         pub fn default() -> Self {
-            Self::new(Default::default())
+            // call new function
+            Self::new()
         }
 
-        /// A message that can be called on instantiated contracts.
-        /// This one flips the value of the stored `bool` from `true`
-        /// to `false` and vice versa.
+        /**
+         * debug fucntion
+         */
         #[ink(message)]
-        pub fn flip(&mut self) {
-            self.value = !self.value;
-        }
-
-        /// Simply returns the current value of our `bool`.
-        #[ink(message)]
-        pub fn get(&self) -> bool {
-            self.value
+        pub fn debug(&self) {
+            debug_println!("Hello World!");
         }
     }
 
-    /// Unit tests in Rust are normally defined within such a `#[cfg(test)]`
-    /// module and test functions are marked with a `#[test]` attribute.
-    /// The below code is technically just normal Rust code.
+    /**
+     * test code
+     */
     #[cfg(test)]
     mod tests {
         /// Imports all the definitions from the outer scope so we can use them here.
@@ -59,16 +84,8 @@ mod backend {
         #[ink::test]
         fn default_works() {
             let backend = Backend::default();
-            assert_eq!(backend.get(), false);
+            assert_eq!(backend.debug(), "HelloWorld");
         }
 
-        /// We test a simple use case of our contract.
-        #[ink::test]
-        fn it_works() {
-            let mut backend = Backend::new(false);
-            assert_eq!(backend.get(), false);
-            backend.flip();
-            assert_eq!(backend.get(), true);
-        }
     }
 }
