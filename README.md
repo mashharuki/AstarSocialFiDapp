@@ -14,6 +14,20 @@ AstarNetwork と連動する SocialFi Dapp 開発用のリポジトリです。
   - metadata.json (the contract's metadata)
 ```
 
+### テストコマンド
+
+`cargo +nightly-2022-08-15 contract test`
+
+うまく行くと次のように出力されます。
+
+```zsh
+running 2 tests
+test backend::tests::default_works ... ok
+test backend::tests::it_works ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+```
+
 ### Astar Network のノードをローカルで立てる手順
 
 [https://github.com/mashharuki/Astar](https://github.com/mashharuki/Astar)を参考に資材を持ってきてビルドする。  
