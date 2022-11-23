@@ -16,16 +16,18 @@ AstarNetwork と連動する SocialFi Dapp 開発用のリポジトリです。
 
 ### テストコマンド
 
-`cargo +nightly-2022-08-15 contract test`
+`cargo +nightly-2022-08-15 test -- --nocapture`
 
 うまく行くと次のように出力されます。
 
 ```zsh
-running 2 tests
-test backend::tests::default_works ... ok
-test backend::tests::it_works ... ok
 
-test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+***プロフィール関連のテスト***
+
+running 1 test
+profile_list: Profile { following_list: [], follower_list: [], friend_list: [], user_id: AccountId([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]), name: Some("mash"), img_url: Some("https//ff..."), message_list_id_list: [], post_id_list: [] }
+test backend::tests::test_profile_fn_works ... ok
+
 ```
 
 ### Astar Network のノードをローカルで立てる手順

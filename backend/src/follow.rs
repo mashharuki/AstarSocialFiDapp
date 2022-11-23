@@ -66,7 +66,7 @@ impl Backend {
                   self.message_list_map_counter = &self.message_list_map_counter + 1;
             }
   
-            for n in 0..length {
+            for n in 0..message_length {
                   // 自分の持っているメッセージリストのIDを、フォローする相手が持っていない
                   // 既に二人用のメッセージリストが作成されていないかを確認
                   let is_contained = followed_user_profile
