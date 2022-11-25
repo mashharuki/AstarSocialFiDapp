@@ -520,6 +520,17 @@ There are ready-to-install packages for many platforms:
 
 と表示された場合には、`npm install wasm-opt -g`で必要なモジュールをインポートすること。
 
+### アトミックデザインとは
+
+アトミックデザインとはアプリを構成するパーツの単位を 5 つの段階に分けるという考え方です。
+
+- Atoms(原子)
+- Molecules(分子)
+- Organism(生体)
+- Template(テンプレート)
+- Pages(ページ)
+  に分けられ Atoms(原子)に近いほど小さく、Pages に近いほど大きなパーツになります。
+
 ### 参考文献
 
 1. [cargo-contract](https://github.com/paritytech/cargo-contract)
@@ -529,3 +540,4 @@ There are ready-to-install packages for many platforms:
 5. [Polkadot Explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.polkadot.io#/explorer)
 6. [Astar Portal](https://portal.astar.network/#/astar/assets)
 7. [BASE64Decode and Encode](https://www.base64encode.org/)
+8. [アトミックデザインとは？メリットや気を付けるポイントを徹底解説！](https://spice-factory.co.jp/web/about-atmicdesign/)
