@@ -528,3 +528,4 @@ There are ready-to-install packages for many platforms:
 4. [Astar](https://github.com/mashharuki/Astar)
 5. [Polkadot Explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.polkadot.io#/explorer)
 6. [Astar Portal](https://portal.astar.network/#/astar/assets)
+7. [BASE64Decode and Encode](https://www.base64encode.org/)
