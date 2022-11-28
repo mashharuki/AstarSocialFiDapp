@@ -16,7 +16,8 @@ type Props = {
 };
 
 // rpcURL
-const blockchainUrl = "Blast: wss://shibuya.public.blastapi.io";
+const blockchainUrl = "ws://127.0.0.1:9944";
+// const blockchainUrl = "Blast: wss://shibuya.public.blastapi.io";
 
 /**
  * connectToContract component

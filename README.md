@@ -2,6 +2,10 @@
 
 AstarNetwork と連動する SocialFi Dapp 開発用のリポジトリです。
 
+### 成果物の Gif
+
+<img src="./docs/sample.gif">
+
 ### ビルドコマンド
 
 `cd backend && cargo +nightly-2022-08-15 contract build`
@@ -545,3 +549,4 @@ There are ready-to-install packages for many platforms:
 6. [Astar Portal](https://portal.astar.network/#/astar/assets)
 7. [BASE64Decode and Encode](https://www.base64encode.org/)
 8. [アトミックデザインとは？メリットや気を付けるポイントを徹底解説！](https://spice-factory.co.jp/web/about-atmicdesign/)
+9. []()
