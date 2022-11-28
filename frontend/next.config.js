@@ -5,8 +5,10 @@ const nextConfig = {
   images: {
     domains: [
       "images.unsplash.com", 
+      "unsplash.com", 
       "plus.unsplash.com",
-      "ibb.co"
+      "ibb.co",
+      "i.ibb.co",
     ],
   },
   typescript: {

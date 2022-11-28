@@ -348,8 +348,9 @@ export const getFollowingList = async (props: PropsGFIL) => {
 export const getFollowerList = async (props: PropsGFEL) => {
       // create contract object
       const contract = new ContractPromise(props.api!, abi, contractAddress);
+      console.log("contract", contract)
       // call getFollowerList function
-      const { gasConsumed, result, output } = await contract.query.getFollowerList(
+      const { gasConsumed, result, output } = await contract.query.getFollowingList(
             "",
             {
                   value: 0,

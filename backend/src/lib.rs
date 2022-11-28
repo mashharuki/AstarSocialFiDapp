@@ -183,6 +183,16 @@ mod backend {
         }
 
         /**
+         * get follower list function
+         */
+        #[ink(message)]
+        pub fn get_follower_list(&self, account_id: AccountId) -> Vec<AccountId> {
+            // get following list
+            let follower_list: Vec<AccountId> = self.get_follower_list_fn(account_id);
+            follower_list
+        }
+
+        /**
          * get profile ingo function
          */
         #[ink(message)]

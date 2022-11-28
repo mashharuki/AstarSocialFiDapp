@@ -531,6 +531,10 @@ There are ready-to-install packages for many platforms:
 - Pages(ページ)
   に分けられ Atoms(原子)に近いほど小さく、Pages に近いほど大きなパーツになります。
 
+### デプロイしたコントラクト情報
+
+[contract](https://shibuya.subscan.io/account/b2HgVBfM3szxiKLYmd6AhQdojb8jxv8bpGkjLWr9gPFJeZ4)
+
 ### 参考文献
 
 1. [cargo-contract](https://github.com/paritytech/cargo-contract)

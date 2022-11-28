@@ -93,6 +93,8 @@ export const getMessageList = async (props: PropsGML) => {
             1
       );
 
+      console.log("get message list:", output)
+
       if (output !== undefined && output !== null) {
             return output;
       }

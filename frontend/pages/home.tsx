@@ -35,7 +35,18 @@ export default function home() {
       const [generalPostList, setGeneralPostList] = useState<PostType[]>([]);
       const [balance, setBalance] = useState<string>("0");
 
+      /**
+       * 待ち時間用の関数
+       */
+      const sleep = (waitTime: number) => { 
+            var startMsec = new Date().getTime();
+            while (new Date().getTime() - startMsec < waitTime);
+      };
+
       useEffect(() => {
+            // sleep
+            sleep(30);
+            
             // call connectToContract function
             connectToContract({
                   api: api,
